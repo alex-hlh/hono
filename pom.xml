@@ -12,7 +12,9 @@
 
     <modules>
         <module>hono-dependencies</module>
+        <module>hono-common</module>
         <module>hono-server</module>
+        <module>hono-preview</module>
     </modules>
 
     <properties>
