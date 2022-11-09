@@ -3,7 +3,6 @@ package com.hu.hono.server;
 import com.hu.hono.server.config.AppBanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -11,13 +10,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.util.StopWatch;
 
 @SpringBootApplication
-public class HonoServerApplication {
+public class Application {
 
-    private static final Logger logger = LoggerFactory.getLogger(HonoServerApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
     public static void main(String[] args) {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        ConfigurableApplicationContext context = new SpringApplicationBuilder(HonoServerApplication.class)
+        ConfigurableApplicationContext context = new SpringApplicationBuilder(Application.class)
                 .logStartupInfo(false)
                 .banner(new AppBanner())
                 .run(args);
