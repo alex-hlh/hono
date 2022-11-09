@@ -1,13 +1,37 @@
 server:
   port: 8081
-  # ?????undertow????????
+  # 下面是配置undertow作为服务器的参数
   undertow:
-    # ??IO???, ???????????,?????????, ??????CPU??????
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
     io-threads: 4
-    # ???????, ?????servlet??????, undertow????????????,?????????????
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
     worker-threads: 20
-    # ????????buffer,??buffer?????????IO??,????netty???????
-    # ??buffer?????,???????????
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
     buffer-size: 1024
-    # ?????????
+    # 是否分配的直接内存
     direct-buffers: true
+  #数据库配置
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ruoyi?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 10 #连接池中允许的最小连接数，默认10
+      idle-timeout: 180000 #空闲连接存活最大时间，默认600000(10分钟)
+      maximum-pool-size: 100 #最大连接数，默认10
+      auto-commit: true #自动提交
+      pool-name: HikariCP #连接池名称
+      max-lifetime: 1800000 #连接池生命周期(毫秒),超时而且没被使用则释放(retied), 默认30分钟，建议设置比数据库超时时长少30秒
+      connection-timeout: 30000 # 数据库连接超时时间，默认30秒
+spring:
+  data:
+    mongodb:
+      host: 192.168.40.237
+      port: 27017
+      database: flow
+      authentication-database: admin
+      username: hlh
+      password: hlh123
