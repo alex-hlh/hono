@@ -11,6 +11,16 @@ server:
     buffer-size: 1024
     # 是否分配的直接内存
     direct-buffers: true
+
+spring:
+  data:
+    mongodb:
+      host: 192.168.40.237
+      port: 27017
+      database: flow
+      authentication-database: admin
+      username: hlh
+      password: hlh123
   #数据库配置
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
@@ -26,12 +36,3 @@ server:
       pool-name: HikariCP #连接池名称
       max-lifetime: 1800000 #连接池生命周期(毫秒),超时而且没被使用则释放(retied), 默认30分钟，建议设置比数据库超时时长少30秒
       connection-timeout: 30000 # 数据库连接超时时间，默认30秒
-spring:
-  data:
-    mongodb:
-      host: 192.168.40.237
-      port: 27017
-      database: flow
-      authentication-database: admin
-      username: hlh
-      password: hlh123
