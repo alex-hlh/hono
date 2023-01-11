@@ -10,13 +10,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.util.StopWatch;
 
 @SpringBootApplication
-public class Application {
+public class HonoApplication {
 
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+    private static final Logger logger = LoggerFactory.getLogger(HonoApplication.class);
     public static void main(String[] args) {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        ConfigurableApplicationContext context = new SpringApplicationBuilder(Application.class)
+        ConfigurableApplicationContext context = new SpringApplicationBuilder(HonoApplication.class)
                 .logStartupInfo(false)
                 .banner(new AppBanner())
                 .run(args);

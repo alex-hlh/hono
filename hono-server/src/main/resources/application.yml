@@ -15,12 +15,12 @@ server:
 spring:
   data:
     mongodb:
-      host: 192.168.40.237
+      host: 192.168.40.252
       port: 27017
       database: flow
       authentication-database: admin
-      username: hlh
-      password: hlh123
+#      username: hlh
+#      password: hlh123
   #数据库配置
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
