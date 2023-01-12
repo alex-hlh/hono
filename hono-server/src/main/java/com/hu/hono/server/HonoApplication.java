@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.util.StopWatch;
 
 @SpringBootApplication
+@EnableAsync
 public class HonoApplication {
 
     private static final Logger logger = LoggerFactory.getLogger(HonoApplication.class);

@@ -13,12 +13,12 @@ server:
     direct-buffers: true
 
 spring:
-  data:
-    mongodb:
-      host: 192.168.40.252
-      port: 27017
-      database: flow
-      authentication-database: admin
+#  data:
+#    mongodb:
+#      host: 192.168.40.251
+#      port: 27017
+#      database: flow
+#      authentication-database: admin
 #      username: hlh
 #      password: hlh123
   #数据库配置

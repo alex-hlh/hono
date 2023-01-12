@@ -1,13 +1,17 @@
 package com.hu.hono.server.controller;
 
-import cn.hutool.json.JSONUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
+import com.hu.hono.server.service.DeleteEvent;
+import com.hu.hono.server.service.SaveEvent;
+import com.hu.hono.server.service.SelectEvent;
+import com.hu.hono.server.service.UpdateEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author hlh
@@ -20,17 +24,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-    @Autowired
-    private MongoTemplate mongoTemplate;
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
+    @Resource
+    private ApplicationEventPublisher publisher;
 
     @GetMapping("/add")
     public String test(){
-        Flow flow = new Flow();
-        flow.setId("1");
-        flow.setName("hlh");
-        mongoTemplate.save(flow);
-        Query query = new Query(Criteria.where("id").is("1"));
-        Flow one = mongoTemplate.findOne(query, Flow.class);
-        return JSONUtil.toJsonStr(one);
+        log.info("==================start==========================");
+        publisher.publishEvent(new SaveEvent("save event"));
+        publisher.publishEvent(new DeleteEvent("delete event"));
+        publisher.publishEvent(new SelectEvent("select event"));
+        publisher.publishEvent(new UpdateEvent("update event"));
+        log.info("==================end==========================");
+        return "success";
     }
 }
