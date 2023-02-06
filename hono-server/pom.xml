@@ -60,10 +60,6 @@
             <artifactId>hono-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.mindrot</groupId>
-            <artifactId>jbcrypt</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
