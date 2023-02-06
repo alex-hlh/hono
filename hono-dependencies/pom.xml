@@ -41,6 +41,7 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <jackson-datatype.version>2.12.6</jackson-datatype.version>
         <ip2region.version>2.6.6</ip2region.version>
+        <jbcrypt.version>0.4</jbcrypt.version>
     </properties>
 
     <dependencyManagement>
@@ -236,6 +237,11 @@
                 <groupId>org.lionsoul</groupId>
                 <artifactId>ip2region</artifactId>
                 <version>${ip2region.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mindrot</groupId>
+                <artifactId>jbcrypt</artifactId>
+                <version>${jbcrypt.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
