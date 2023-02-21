@@ -19,7 +19,7 @@ spring:
       port: 27017
       database: hono
       authentication-database: hono
-      username: "test"
+      username: "hono"
       password: "123456"
       auto-index-creation: true
   #数据库配置
