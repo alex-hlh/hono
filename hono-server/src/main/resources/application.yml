@@ -13,19 +13,20 @@ server:
     direct-buffers: true
 
 spring:
-#  data:
-#    mongodb:
-#      host: 192.168.40.251
-#      port: 27017
-#      database: flow
-#      authentication-database: admin
-#      username: hlh
-#      password: hlh123
+  data:
+    mongodb:
+      host: 192.168.40.253
+      port: 27017
+      database: hono
+      authentication-database: hono
+      username: "test"
+      password: "123456"
+      auto-index-creation: true
   #数据库配置
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/ruoyi?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/hono?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true
     username: root
     password: 123456
     hikari:
@@ -36,3 +37,11 @@ spring:
       pool-name: HikariCP #连接池名称
       max-lifetime: 1800000 #连接池生命周期(毫秒),超时而且没被使用则释放(retied), 默认30分钟，建议设置比数据库超时时长少30秒
       connection-timeout: 30000 # 数据库连接超时时间，默认30秒
+
+#camunda.bpm:
+#  admin-user:
+#    id: root
+#    password: 123456
+#    firstName: root
+#  filter:
+#    create: All tasks
