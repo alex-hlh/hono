@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
@@ -21,10 +23,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @Document(collection = "t_forces")
 public class ForcesEntity {
+    @Id
     private Long id;//主键
+    @Indexed
     private String monarch;//君主
     private String adviser;//军师
     private String peerage;//爵位
+    @Indexed
     private String nation;//国号
     private String forcesColor;//势力颜色
     private String forcePolicy;//势力方针

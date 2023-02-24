@@ -27,7 +27,7 @@ public class MongoConfig {
 
     @Bean
     public SimpleMongoClientDatabaseFactory getFactory() {
-        return new SimpleMongoClientDatabaseFactory("mongodb://192.168.40.253:27017/hono");
+        return new SimpleMongoClientDatabaseFactory("mongodb://192.168.40.250:27017/hono");
     }
 
     @Bean
