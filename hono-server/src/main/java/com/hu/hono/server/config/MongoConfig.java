@@ -23,7 +23,7 @@ import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
  */
 @Configuration
 @Slf4j
-public class MongoMappingConfig {
+public class MongoConfig {
 
     @Bean
     public SimpleMongoClientDatabaseFactory getFactory() {
