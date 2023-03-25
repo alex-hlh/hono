@@ -42,6 +42,7 @@
         <jackson-datatype.version>2.12.6</jackson-datatype.version>
         <ip2region.version>2.6.6</ip2region.version>
         <camunda.spring-boot.version>7.16.0</camunda.spring-boot.version>
+        <flowable.version>6.8.1.8</flowable.version>
     </properties>
 
     <dependencyManagement>
@@ -55,11 +56,11 @@
             </dependency>
 
             <!--security 依赖-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-security</artifactId>
-                <version>${spring.boot.version}</version>
-            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.boot</groupId>-->
+            <!--                <artifactId>spring-boot-starter-security</artifactId>-->
+            <!--                <version>${spring.boot.version}</version>-->
+            <!--            </dependency>-->
             <!--JWT 依赖-->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
@@ -247,6 +248,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-mongodb</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-engine</artifactId>
+                <version>${flowable.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
