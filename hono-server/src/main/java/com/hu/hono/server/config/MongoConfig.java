@@ -27,12 +27,12 @@ public class MongoConfig {
 
     @Bean
     public SimpleMongoClientDatabaseFactory getFactory() {
-        return new SimpleMongoClientDatabaseFactory("mongodb://192.168.40.250:27017/hono");
+        return new SimpleMongoClientDatabaseFactory("mongodb://127.0.0.1:27017/hono");
     }
 
     @Bean
     public MappingMongoConverter mappingMongoConverter(SimpleMongoClientDatabaseFactory factory,
-                                                       MongoMappingContext context, BeanFactory beanFactory) {
+        MongoMappingContext context, BeanFactory beanFactory) {
         DbRefResolver dbRefResolver = new DefaultDbRefResolver(factory);
         MappingMongoConverter converter = new MappingMongoConverter(dbRefResolver, context);
         try {
