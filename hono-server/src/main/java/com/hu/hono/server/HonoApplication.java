@@ -1,6 +1,7 @@
 package com.hu.hono.server;
 
 import com.hu.hono.server.config.AppBanner;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ import org.springframework.util.StopWatch;
 
 @SpringBootApplication
 @EnableAsync
+@MapperScan(value = {"com.hu.hono.**.mapper"})
 public class HonoApplication {
 
     private static final Logger logger = LoggerFactory.getLogger(HonoApplication.class);
