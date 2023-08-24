@@ -49,7 +49,7 @@ public class ProcessEngineConfig {
 					.setJdbcPassword(password)
 					.setJdbcDriver(driverClassName)
 					// 初始化基础表，不需要的可以改为 DB_SCHEMA_UPDATE_FALSE
-					.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE)
+					.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_FALSE)
 					// 默认邮箱配置
 					// 发邮件的主机地址，先用 QQ 邮箱
 					.setMailServerHost("smtp.qq.com")

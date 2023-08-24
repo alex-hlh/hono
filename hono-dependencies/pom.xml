@@ -15,9 +15,8 @@
         <revision>1.0.0</revision>
         <!-- 统一依赖管理 -->
         <spring.boot.version>2.6.7</spring.boot.version>
-        <knife4j.version>3.0.2</knife4j.version>
-        <swagger-annotations.version>1.5.22</swagger-annotations.version>
-        <!--    <springdoc.version>1.6.2</springdoc.version>-->
+        <knife4j.version>4.1.0</knife4j.version>
+        <swagger.ui.version>2.10.5</swagger.ui.version>
         <servlet.versoin>2.5</servlet.versoin>
         <!-- DB 相关 -->
         <mysql.version>8.0.27</mysql.version>
@@ -62,11 +61,11 @@
             <!--                <version>${spring.boot.version}</version>-->
             <!--            </dependency>-->
             <!--JWT 依赖-->
-            <dependency>
-                <groupId>io.jsonwebtoken</groupId>
-                <artifactId>jjwt</artifactId>
-                <version>0.9.0</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>io.jsonwebtoken</groupId>-->
+<!--                <artifactId>jjwt</artifactId>-->
+<!--                <version>0.9.0</version>-->
+<!--            </dependency>-->
 
             <!-- google kaptcha依赖 -->
             <dependency>
@@ -78,21 +77,23 @@
             <!-- knife4j依赖 -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger-annotations.version}</version>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.ui.version}</version>
             </dependency>
+
+            <!-- spring配置跳转 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
                 <optional>true</optional>
             </dependency>
-            <!-- DB 相关 -->
 
+            <!-- DB 相关 -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
