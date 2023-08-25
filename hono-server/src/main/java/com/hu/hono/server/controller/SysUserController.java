@@ -1,15 +1,10 @@
 package com.hu.hono.server.controller;
 
-import com.hu.hono.common.entity.SysUser;
+import com.hu.hono.common.result.CommonResult;
 import com.hu.hono.server.service.ISysUserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +22,10 @@ public class SysUserController{
 
 	@Autowired
 	private ISysUserService sysUserService;
+
+	@PostMapping("/login")
+	public CommonResult login(){
+		return CommonResult.success();
+	}
 
 }
