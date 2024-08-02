@@ -14,7 +14,7 @@
         <java.version>8</java.version>
         <revision>1.0.0</revision>
         <!-- 统一依赖管理 -->
-        <spring.boot.version>2.6.7</spring.boot.version>
+        <spring.boot.version>2.7.3</spring.boot.version>
         <knife4j.version>3.0.2</knife4j.version>
         <swagger-annotations.version>1.5.22</swagger-annotations.version>
         <!--    <springdoc.version>1.6.2</springdoc.version>-->
@@ -22,9 +22,9 @@
         <!-- DB 相关 -->
         <mysql.version>8.0.27</mysql.version>
         <druid.version>1.2.4</druid.version>
-        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mybatis-plus.version>3.5.4</mybatis-plus.version>
         <dynamic-datasource.version>3.3.2</dynamic-datasource.version>
-        <redisson.version>3.16.3</redisson.version>
+        <redisson.version>3.33.0</redisson.version>
         <!-- 工具类相关 -->
         <lombok.version>1.18.20</lombok.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>
@@ -39,10 +39,13 @@
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <pagehelper.boot.version>1.4.2</pagehelper.boot.version>
         <kaptcha.version>2.3.2</kaptcha.version>
-        <jackson-datatype.version>2.12.6</jackson-datatype.version>
+        <jackson-datatype.version>2.14.1</jackson-datatype.version>
         <ip2region.version>2.6.6</ip2region.version>
         <camunda.spring-boot.version>7.16.0</camunda.spring-boot.version>
-        <flowable.version>6.8.1.8</flowable.version>
+        <flowable.version>6.8.1</flowable.version>
+        <postgresql.version>42.5.1</postgresql.version>
+        <fastjson.version>2.0.52</fastjson.version>
+        <freemarker.version>2.3.31</freemarker.version>
     </properties>
 
     <dependencyManagement>
@@ -110,10 +113,15 @@
                 <version>${mysql.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring.boot.version}</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba</groupId>-->
+<!--                <artifactId>druid-spring-boot-starter</artifactId>-->
+<!--                <version>${druid.version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -125,11 +133,11 @@
                 <version>${dynamic-datasource.version}</version>
             </dependency>-->
             <!-- DB redis-->
-            <!--            <dependency>-->
-            <!--                <groupId>org.redisson</groupId>-->
-            <!--                <artifactId>redisson-spring-boot-starter</artifactId>-->
-            <!--                <version>${redisson.version}</version>-->
-            <!--            </dependency>-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -141,6 +149,11 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson-datatype.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
                 <version>${jackson-datatype.version}</version>
             </dependency>
             <!-- lombok -->
@@ -206,7 +219,7 @@
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
-                <version>1.9.4</version>
+                <version>1.9.7</version>
             </dependency>
 
             <dependency>
@@ -249,10 +262,40 @@
                 <artifactId>spring-boot-starter-data-mongodb</artifactId>
                 <version>${spring.boot.version}</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.flowable</groupId>-->
+<!--                <artifactId>flowable-engine</artifactId>-->
+<!--                <version>${flowable.version}</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>org.flowable</groupId>
-                <artifactId>flowable-engine</artifactId>
+                <artifactId>flowable-spring-boot-starter</artifactId>
                 <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2-extension-spring5</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
