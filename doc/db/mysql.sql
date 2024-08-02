@@ -46,7 +46,7 @@ create table sys_user (
                           user_name         varchar(30)     default ''                 comment '用户昵称',
                           user_type         varchar(2)      default '00'               comment '用户类型（00系统用户 01注册用户）',
                           email             varchar(50)     default ''                 comment '用户邮箱',
-                          phonenumber       varchar(11)     default ''                 comment '手机号码',
+                          phone_number       varchar(11)     default ''                 comment '手机号码',
                           sex               char(1)         default '0'                comment '用户性别（0男 1女 2未知）',
                           avatar            varchar(100)    default ''                 comment '头像路径',
                           password          varchar(50)     default ''                 comment '密码',
@@ -68,7 +68,6 @@ create table sys_user (
 -- 初始化-用户信息表数据
 -- ----------------------------
 insert into sys_user values(1,  103, 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '29c67a30398638269fe600f73a054934', '111111', '0', '0', '127.0.0.1', sysdate(), sysdate(), 'admin', sysdate(), '', null, '管理员');
-insert into sys_user values(2,  105, 'ry',    '若依', '00', 'ry@qq.com',  '15666666666', '1', '', '8e6d98b90472783cc73c17047ddccf36', '222222', '0', '0', '127.0.0.1', sysdate(), sysdate(), 'admin', sysdate(), '', null, '测试员');
 
 
 -- ----------------------------
@@ -515,7 +514,3 @@ insert into sys_dict_data values(26, 8,  '生成代码', '8',       'sys_oper_ty
 insert into sys_dict_data values(27, 9,  '清空数据', '9',       'sys_oper_type',       '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '清空操作');
 insert into sys_dict_data values(28, 1,  '成功',     '0',       'sys_common_status',   '',   'primary', 'N', '0', 'admin', sysdate(), '', null, '正常状态');
 insert into sys_dict_data values(29, 2,  '失败',     '1',       'sys_common_status',   '',   'danger',  'N', '0', 'admin', sysdate(), '', null, '停用状态');
-
-
-
-
